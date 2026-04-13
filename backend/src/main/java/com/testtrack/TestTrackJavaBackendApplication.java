@@ -1,0 +1,13 @@
+package com.testtrack;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TestTrackJavaBackendApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TestTrackJavaBackendApplication.class, args);
+	}
+
+}

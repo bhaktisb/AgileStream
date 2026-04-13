@@ -1,0 +1,19 @@
+# Node & Bun
+node_modules/
+client/node_modules/
+client/dist/
+bun.lockb
+
+# Python
+__pycache__/
+server/__pycache__/
+*.pyc
+venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Other
+.DS_Store

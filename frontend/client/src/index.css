@@ -1,0 +1,161 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: #e2e8f0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+a {
+  font-weight: 500;
+  color: #818cf8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #c7d2fe;
+}
+
+h1, h2, h3, h4 {
+  color: #f8fafc;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+h1 { font-size: 2.5em; font-weight: 700; letter-spacing: -1px; }
+h3 { font-size: 1.5em; font-weight: 600; margin-top: 2rem; }
+
+form, .glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background: linear-gradient(to right, #4f46e5, #6366f1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+  width: 100%;
+  margin-top: 1rem;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.6);
+  background: linear-gradient(to right, #4338ca, #4f46e5);
+}
+
+input, textarea, select {
+  margin: 0.5em 0;
+  padding: 0.8em;
+  font-size: 1em;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #818cf8;
+  background: rgba(0, 0, 0, 0.3);
+}
+input::placeholder, textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Kanban specific styles */
+.kanban-board {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 1rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.kanban-column {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  min-height: 400px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.kanban-column h4 {
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #c7d2fe;
+}
+
+.kanban-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kanban-card:active {
+  cursor: grabbing;
+}
+
+.kanban-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.priority-high { border-left: 4px solid #ef4444 !important; }
+.priority-medium { border-left: 4px solid #f59e0b !important; }
+.priority-low { border-left: 4px solid #3b82f6 !important; }
+
+.kanban-card h5 { margin: 0 0 0.5rem 0; font-size: 1.1em; text-align: left; }
+.kanban-card p { margin: 0; font-size: 0.9em; color: #cbd5e1; }
+.kanban-card .meta { font-size: 0.8em; color: #94a3b8; margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center; }
+
+table { display: none; } /* hide fallback tables safely */

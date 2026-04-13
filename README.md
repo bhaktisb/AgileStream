@@ -1,60 +1,100 @@
-# 🚀 AgileStream: Issue Manager & DSA Balancer
+# 🚀 AgileStream – Bug Tracking & Workflow Management System
 
-AgileStream is a highly scalable, full-stack Software Engineering pipeline and bug tracking application. Originally designed as a straightforward bug logger, it has evolved into a robust Agile Management tool showcasing Decoupled Architecture, advanced JWT Security, and an implementation of pure Data Structures & Algorithms (Priority Queues) to automate developer workflows.
-
----
-
-## 🔥 Key Innovations & Features
-
-### 1. Intelligent Algorithmic Bug-Routing (Custom DSA Implementation)
-Unlike standard bug trackers that rely on manual assignment, AgileStream acts as an "intelligent coordinator." 
-- It intercepts newly logged critical bugs and structures them in a custom **Java Priority Queue (Min-Heap)**.
-- It dynamically evaluates which developer holds the fewest active tickets.
-- It algorithmically auto-assigns the highest priority bug to the least burdened developer in O(log n) time, converting theoretical DSA into a practical pipeline automation tool.
-
-### 2. Interactive Agile Kanban Board
-The frontend features a stunning Glassmorphism aesthetic with a functional, drag-and-drop Kanban interface. Developers and Testers can drag tickets from **Open** to **In Progress** to **Resolved**, automatically syncing state modifications through the underlying Headless API. 
-
-### 3. Bulletproof Cryptographic Security (JWT)
-AgileStream completely decentralizes security scope using stateless sessions. It relies on a rigorous backend JWT-Filter mechanism wrapping **HS256 encryption cryptography**. Tokens securely dictate strict Role-Based Access Controls (RBAC) separating Admins, Developers, and Testers without relying on server-side memory bloat.
-
-### 4. Headless API Design
-Operating on a clean Microservice-like model, the backend is a fully encapsulated RESTful API. The React frontend and Java backend are entirely decoupled, meaning a native mobile application could be integrated tomorrow without altering a single line of Java logic.
+AgileStream is a full-stack bug tracking and Agile workflow management application built using **Spring Boot and React**. It helps teams manage bugs efficiently, automate task assignment, and track progress using an interactive Kanban board.
 
 ---
 
-## 🛠️ Technology Stack
-- **Frontend Layer:** React.js, Vite, Chart.js, HTML5 Drag-and-Drop, Modern CSS (Glassmorphism & Flexbox).
-- **Backend Architecture:** Java 17, Spring Boot, Spring Security (JWT / JJWT).
-- **Database Layer:** MySQL mapped via Hibernate / Spring Data JPA.
-- **Build & DevOps:** Maven, npm.
+## 🛠️ Tech Stack
+
+* Frontend: React.js, Vite, HTML5, CSS
+* Backend: Java 17, Spring Boot, Spring Security (JWT)
+* Database: MySQL, Hibernate (JPA)
+* Tools: Maven, Git, Postman
 
 ---
 
-## 🚀 Setup Instructions
+## ✨ Features
 
-Because the Frontend and Backend are decoupled, they run on distinct developmental servers. 
+### 🔐 Authentication & Security
 
-### 1. Starting the Java Backend (API)
-Ensure you have MySQL running and your database schema established.
+* Implemented secure login using **JWT (JSON Web Tokens)**
+* Role-based access control for Admin, Developer, and Tester
+
+### 📌 Bug Lifecycle Management
+
+* Create, assign, update, and resolve bugs using REST APIs
+* Backend built using Spring Boot with MVC architecture
+
+### 🧠 Automated Bug Assignment (DSA)
+
+* Implemented using **Java Priority Queue (Min-Heap)**
+* Assigns high-priority bugs to the least-loaded developer
+* Improves task distribution efficiency
+
+### 📊 Kanban Board UI
+
+* Drag-and-drop interface (Open → In Progress → Resolved)
+* Real-time updates via API integration
+
+### 🔗 Decoupled Architecture
+
+* Frontend and backend communicate via REST APIs
+* Enables easy scalability and independent development
+
+---
+
+## 📂 Project Structure
+
 ```bash
-# Navigate to the Java Spring Boot Backend directory
-cd backend
-
-# Ensure dependencies are installed and boot the server
-.\mvnw.cmd spring-boot:run
+AgileStream/
+│── frontend/        # React Application
+│── backend/         # Spring Boot Application
+│── README.md
 ```
-*The API will establish a secure connection via Port `5000`.*
 
-### 2. Starting the React Frontend (UI)
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Run Backend (Spring Boot)
+
 ```bash
-# Navigate to the React Client directory
-cd frontend/client
+cd backend
+./mvnw spring-boot:run
+```
 
-# Install any uninstalled node modules
+Runs on: `http://localhost:5000`
+
+---
+
+### 2️⃣ Run Frontend (React)
+
+```bash
+cd frontend
 npm install
-
-# Start the Vite Hot-Reloading Developmental Server
 npm run dev
 ```
-*The user interface will become securely accessible at `http://localhost:5173`.*
+
+Runs on: `http://localhost:5173`
+
+---
+
+## 🧪 Testing
+
+* API testing using Postman
+* UI testing using Selenium
+
+---
+
+## 🚀 Key Learnings
+
+* Built RESTful APIs using Spring Boot
+* Implemented JWT-based authentication and authorization
+* Integrated MySQL using Hibernate/JPA
+* Applied Data Structures (Priority Queue) in a real-world use case
+* Developed a complete full-stack application
+
+---
+
+## 👩‍💻 Author
+Bhakti Bhande
